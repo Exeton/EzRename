@@ -20,6 +20,7 @@ public class EzRename extends JavaPlugin {
         registerColorCode("Dark Red", "4");
         registerColorCode("Red", "c");
         registerColorCode("Gold", "6");
+        registerColorCode("Orange", "6");
         registerColorCode("Yellow", "e");
         registerColorCode("Dark Green", "2");
         registerColorCode("Green", "a");
@@ -72,10 +73,9 @@ public class EzRename extends JavaPlugin {
         int pos = 0;
         while (pos < coloredText.length() && coloredText.indexOf(colorCodeSymbol, pos) >= 0){
 
-            Bukkit.getLogger().info("Loop");
 
             int nextPos = coloredText.indexOf(colorCodeSymbol, pos);
-            int nextNextPos = coloredText.indexOf(colorCodeSymbol, pos + nextPos + 1);
+            int nextNextPos = coloredText.indexOf(colorCodeSymbol, nextPos + 1);
             if (nextNextPos < 0)
                 break;
 
@@ -84,21 +84,18 @@ public class EzRename extends JavaPlugin {
                 continue;
             }
 
-
-            Bukkit.getLogger().info(Integer.toString(nextPos + 1));
-            Bukkit.getLogger().info(Integer.toString(nextNextPos));
-            Bukkit.getLogger().info(Integer.toString(coloredText.length()));
-
             String colorName = coloredText.substring(nextPos + 1, nextNextPos);
-            Bukkit.getLogger().info(colorName);
+
             if (colorNamesAndHexValues.containsKey(colorName.toLowerCase())){
 
                 String hexValue = colorNamesAndHexValues.get(colorName.toLowerCase());
                 coloredText = coloredText.replace( colorCodeSymbol + colorName + colorCodeSymbol, "&" + hexValue);
+                pos = coloredText.indexOf('*');
             }
-            pos = nextPos + 1;
+            else{
+                pos = nextPos + 1;
+            }
         }
-        Bukkit.getLogger().info(coloredText);
         return ChatColor.translateAlternateColorCodes('&',ChatColor.RESET + coloredText);
     }
 }

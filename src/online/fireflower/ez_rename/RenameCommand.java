@@ -33,11 +33,7 @@ public class RenameCommand implements CommandExecutor {
         itemMeta.setDisplayName(EzRename.parseColoredText(String.join(" ", strings)));
         playerItem.setItemMeta(itemMeta);
 
-        player.sendMessage(ChatColor.GREEN + "Item renamed");
+        player.sendMessage(ChatColor.GREEN + "Your item has been renamed to " + itemMeta.getDisplayName());
         return true;
     }
-
-
-
-
 }
