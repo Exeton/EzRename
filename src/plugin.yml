@@ -1,0 +1,11 @@
+main: online.fireflower.ez_rename.EzRename
+name: EzRename
+author: FireFlower
+description: Used to rename items
+version: 1.0
+commands:
+  EzRename:
+    description: Renames items
+    usage: "/rename New name"
+    permission: "EzRename.Rename"
+    permission-message: "You do not have permission EzRename.Rename"
