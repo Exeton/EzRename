@@ -1,5 +1,5 @@
 # EzRename
-Do you hate color codes? Do you ever wish you could type ∗orange∗ instead of &6? Fret no more, and use EzColorCodes.
+Do you hate color codes? Do you ever wish you didn't have to type &6 for Orange and &a for Lime Green? Fret no more, and use EzColorCodes.
 
 ## Commands
 
