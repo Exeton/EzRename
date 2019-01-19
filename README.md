@@ -4,6 +4,7 @@ Do you hate color codes? Do you ever wish you could type ∗orange∗ instead of
 ## Commands
 
 /EzReplace (comming soon)
+<br>
 /EzRename ∗orange∗Item∗Gray∗Name
 
 ## Pictures - It's easier than it looks
